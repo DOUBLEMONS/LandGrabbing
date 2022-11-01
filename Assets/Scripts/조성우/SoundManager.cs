@@ -26,8 +26,8 @@ public class SoundManager : MonoBehaviour
     private AudioSource bgmPlayer;
     private AudioSource sfxPlayer;
 
-    public float masterVolumeSFX = 1f;
-    public float masterVolumeBGM = 1f;
+    [SerializeField] private float masterVolumeSFX = 1f;
+    [SerializeField] private float masterVolumeBGM = 1f;
 
     [SerializeField]
     private AudioClip mainSceneBgmAudioClip; //메인화면에서 사용할 BGM
