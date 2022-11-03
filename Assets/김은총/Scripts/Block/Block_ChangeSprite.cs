@@ -9,10 +9,10 @@ public class Block_ChangeSprite : MonoBehaviour
     SpriteRenderer SpriteRenderer;
 
     [SerializeField]
-    private Slider AreaSlider;
+    public Slider Modernity;
 
-    private float maxBlock = 100;
-    private float curBlock = 100;
+    [SerializeField]
+    public Slider Folklore;
 
     void Awake()
     {
@@ -22,7 +22,8 @@ public class Block_ChangeSprite : MonoBehaviour
 
     void Start()
     {
-        AreaSlider.value = (float)curBlock / (float)maxBlock;
+        Modernity.value = 0;
+        Folklore.value = 0;
     }
 
     void Update()
@@ -34,26 +35,69 @@ public class Block_ChangeSprite : MonoBehaviour
     {
         if (other.gameObject.tag == "Player1")
         {
-            SpriteRenderer.sprite = sprites[1];
-
-            //민속의 점수 하락
-
-            if (SpriteRenderer.sprite != sprites[1])
+            if (SpriteRenderer.sprite == sprites[0])
             {
-                //점수 추가
+                SpriteRenderer.sprite = sprites[1];
+                FolkloreUp();
+            }
+            else if (SpriteRenderer.sprite == sprites[2])
+            {
+                SpriteRenderer.sprite = sprites[1];
+                ModernityDown();
+                FolkloreUp();
             }
         }
-        
-        if(other.gameObject.tag == "Player2")
+        else if (other.gameObject.tag == "Player2")
         {
-            SpriteRenderer.sprite = sprites[2];
-
-            //민속의 점수 하락
-
-            if (SpriteRenderer.sprite != sprites[2])
+            if (SpriteRenderer.sprite == sprites[0])
             {
-                //점수 상승
+                SpriteRenderer.sprite = sprites[2];
+                ModernityUp();
+            }
+            else if (SpriteRenderer.sprite == sprites[1])
+            {
+                SpriteRenderer.sprite = sprites[2];
+                ModernityUp();
+                FolkloreDown();
             }
         }
+    }
+
+    void ModernityUp()
+    {
+        Modernity.value += 0.0065f;
+
+        ModernityValue();
+    }
+
+    void ModernityDown()
+    {
+        Modernity.value -= 0.0065f;
+
+        ModernityValue();
+    }
+
+    void FolkloreUp()
+    {
+        Folklore.value += 0.0065f;
+
+        FolkloreValue();
+    }
+
+    void FolkloreDown()
+    {
+        Folklore.value -= 0.0065f;
+
+        FolkloreValue();
+    }
+
+    void ModernityValue()
+    {
+        Modernity.value = Mathf.Lerp(Modernity.value, Modernity.value, Time.deltaTime * 10);
+    }
+
+    void FolkloreValue()
+    {
+        Folklore.value = Mathf.Lerp(Folklore.value, Folklore.value, Time.deltaTime * 10);
     }
 }
