@@ -34,13 +34,16 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(bgmBnt.image.sprite == bgmMuteSprite && bgmSlider.value != 0)
+        if(SceneManager.GetActiveScene().name == "TitleScene")
         {
-            bgmBnt.image.sprite = bgmOnSprite;
-        }
-        if (sfxBnt.image.sprite == sfxMuteSprite && sfxSlider.value != 0)
-        {
-            sfxBnt.image.sprite = sfxOnSprite;
+            if (bgmBnt.image.sprite == bgmMuteSprite && bgmSlider.value != 0)
+            {
+                bgmBnt.image.sprite = bgmOnSprite;
+            }
+            if (sfxBnt.image.sprite == sfxMuteSprite && sfxSlider.value != 0)
+            {
+                sfxBnt.image.sprite = sfxOnSprite;
+            }
         }
     }
 
