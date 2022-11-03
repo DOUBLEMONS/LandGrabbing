@@ -67,12 +67,16 @@ public class Block_ChangeSprite : MonoBehaviour
     {
         Modernity.value += 0.0065f;
 
+        GameManager.Instance.modernityScore++;
+
         ModernityValue();
     }
 
     void ModernityDown()
     {
         Modernity.value -= 0.0065f;
+
+        GameManager.Instance.modernityScore--;
 
         ModernityValue();
     }
@@ -81,12 +85,16 @@ public class Block_ChangeSprite : MonoBehaviour
     {
         Folklore.value += 0.0065f;
 
+        GameManager.Instance.folkloreScore++;
+
         FolkloreValue();
     }
 
     void FolkloreDown()
     {
         Folklore.value -= 0.0065f;
+
+        GameManager.Instance.folkloreScore--;
 
         FolkloreValue();
     }

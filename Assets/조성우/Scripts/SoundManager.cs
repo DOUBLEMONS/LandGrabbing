@@ -26,9 +26,6 @@ public class SoundManager : MonoBehaviour
     private AudioSource bgmPlayer;
     private AudioSource sfxPlayer;
 
-    [SerializeField] private float masterVolumeSFX = 1f;
-    [SerializeField] private float masterVolumeBGM = 1f;
-
     [SerializeField]
     private AudioClip mainSceneBgmAudioClip; //메인화면에서 사용할 BGM
     [SerializeField]
@@ -58,24 +55,23 @@ public class SoundManager : MonoBehaviour
     }
 
     // 효과 사운드 재생 : 이름을 필수 매개변수, 볼륨을 선택적 매개변수로 지정
-    public void PlaySFXSound(string name, float volume = 1f)
+    public void PlaySFXSound(string name)
     {
         if (audioClipsDic.ContainsKey(name) == false)
         {
             Debug.Log(name + " is not Contained audioClipsDic");
             return;
         }
-        sfxPlayer.PlayOneShot(audioClipsDic[name], volume * masterVolumeSFX);
+        sfxPlayer.PlayOneShot(audioClipsDic[name]);
     }
 
     //BGM 사운드 재생 : 볼륨을 선택적 매개변수로 지정
-    public void PlayBGMSound(float volume = 1f)
+    public void PlayBGMSound()
     {
         bgmPlayer.loop = true; //BGM 사운드이므로 루프설정
-        bgmPlayer.volume = volume * masterVolumeBGM;
 
         //메인씬에서의 브금 재생
-        if (SceneManager.GetActiveScene().name == "MainScene")
+        if (SceneManager.GetActiveScene().name == "TitleScene")
         {
             bgmPlayer.clip = mainSceneBgmAudioClip;
             bgmPlayer.Play();
@@ -87,5 +83,15 @@ public class SoundManager : MonoBehaviour
             bgmPlayer.Play();
         }
         //현재 씬에 맞는 BGM 재생
+    }
+
+    public void SetBgmVolume(float volume)
+    {
+        bgmPlayer.volume = volume;
+    }
+
+    public void SetSfxVolume(float volume)
+    {
+        sfxPlayer.volume = volume;
     }
 }
