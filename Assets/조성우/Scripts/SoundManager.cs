@@ -77,7 +77,12 @@ public class SoundManager : MonoBehaviour
             bgmPlayer.Play();
         }
         //게임씬에서의 브금 재생
-        else if (SceneManager.GetActiveScene().name == "GameScene")
+        else if (SceneManager.GetActiveScene().name == "NomalGameScene")
+        {
+            bgmPlayer.clip = gameSceneBgmAudioClip;
+            bgmPlayer.Play();
+        }
+        else if (SceneManager.GetActiveScene().name == "ItemGameScene")
         {
             bgmPlayer.clip = gameSceneBgmAudioClip;
             bgmPlayer.Play();

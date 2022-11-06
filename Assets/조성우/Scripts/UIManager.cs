@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private RectTransform settingRT;
     [SerializeField] private RectTransform makerRT;
+    [SerializeField] private RectTransform gameChoiceRT;
 
     [SerializeField] private Slider bgmSlider;
     [SerializeField] private Slider sfxSlider;
@@ -26,6 +27,7 @@ public class UIManager : MonoBehaviour
 
     private bool settingImage = false;
     private bool makerImage = false;
+    private bool gameChoiceImage = false;
 
     private void Start()
     {
@@ -77,15 +79,25 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void LoadGameScene()
+    public void LoadNomalGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("NomalGameScene");
     }
 
-    public void LoadExplanationScene()
+    public void LoadItemGameScene()
     {
-        SceneManager.LoadScene("ExplanationScene");
-    }    
+        SceneManager.LoadScene("ItemGameScene");
+    }
+
+    public void LoadNomalExplanationScene()
+    {
+        SceneManager.LoadScene("NomalExplanationScene");
+    }
+
+    public void LoadItemExplanationScene()
+    {
+        SceneManager.LoadScene("ItemExplanationScene");
+    }
 
     public void GameExit()
     {
@@ -99,7 +111,25 @@ public class UIManager : MonoBehaviour
         {
             makerRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
         }
+        if (gameChoiceImage)
+        {
+            gameChoiceRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
+        }
         settingRT.DOAnchorPosY(0, 1).SetEase(Ease.OutQuint);
+    }
+
+    public void OpenGameChoiceImage()
+    {
+        gameChoiceImage = true;
+        if (makerImage)
+        {
+            makerRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
+        }
+        if(settingImage)
+        {
+            settingRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
+        }
+        gameChoiceRT.DOAnchorPosY(0, 1).SetEase(Ease.OutQuint);
     }
 
     public void CloseSettingImage()
@@ -108,12 +138,22 @@ public class UIManager : MonoBehaviour
         settingRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
     }
 
+    public void CloseGameChoiceImage()
+    {
+        gameChoiceImage = false;
+        gameChoiceRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
+    }
+
     public void OpenMakerImage()
     {
         makerImage = true;
         if (settingImage)
         {
             settingRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
+        }
+        if (gameChoiceImage)
+        {
+            gameChoiceRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
         }
         makerRT.DOAnchorPosY(0, 1).SetEase(Ease.OutQuint);
     }
