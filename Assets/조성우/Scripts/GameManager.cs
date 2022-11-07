@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     
     public void LoadRestart()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("NomalGameScene");
     }
 
     public void LoadTitleScene()

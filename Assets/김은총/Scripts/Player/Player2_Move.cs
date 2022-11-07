@@ -24,23 +24,21 @@ public class Player2_Move : MonoBehaviour
 
             if (Vector3.Distance(transform.position, MovePoint.position) <= .05f)
             {
-                if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("LeftRightArrow"), 0f, 0f), .2f, WhatStopMovement))
+                if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("LeftRightArrow"), 0f, 0f), 0.25f, WhatStopMovement))
                 {
                     if (Mathf.Abs(Input.GetAxisRaw("LeftRightArrow")) == 1f)
                     {
-                        if (Input.GetKey(KeyCode.LeftArrow)) // 왼쪽
+                        if (Input.GetKey(KeyCode.LeftArrow)) 
                         {
                             MovePoint.position -= new Vector3(1.0f, 0.0f, 0.0f);
-                            //Debug.Log("확인");
                         }
-                        if (Input.GetKey(KeyCode.RightArrow)) // 오른쪽
+                        if (Input.GetKey(KeyCode.RightArrow)) 
                         {
                             MovePoint.position += new Vector3(1.0f, 0.0f, 0.0f);
-                            //Debug.Log("확인");
                         }
                     }
                 }
-                else if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("UpDownArrow"), 0f), .2f, WhatStopMovement))
+                else if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("UpDownArrow"), 0f), 0.25f, WhatStopMovement))
                 {
                     if (Mathf.Abs(Input.GetAxisRaw("UpDownArrow")) == 1f)
                     {
@@ -56,6 +54,5 @@ public class Player2_Move : MonoBehaviour
                 }
             }
         }
-        
     }
 }

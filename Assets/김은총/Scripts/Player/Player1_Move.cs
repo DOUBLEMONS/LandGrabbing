@@ -24,23 +24,21 @@ public class Player1_Move : MonoBehaviour
 
             if (Vector3.Distance(transform.position, MovePoint.position) <= .05f)
             {
-                if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("AD"), 0f, 0f), .2f, WhatStopMovement))
+                if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("AD"), 0f, 0f), 0.25f, WhatStopMovement))
                 {
                     if (Mathf.Abs(Input.GetAxisRaw("AD")) == 1f)
                     {
-                        if (Input.GetKey(KeyCode.A)) // 왼쪽
+                        if (Input.GetKey(KeyCode.A)) 
                         {
                             MovePoint.position -= new Vector3(1.0f, 0.0f, 0.0f);
-                            //Debug.Log("확인");
                         }
-                        if (Input.GetKey(KeyCode.D)) // 오른쪽
+                        if (Input.GetKey(KeyCode.D)) 
                         {
                             MovePoint.position += new Vector3(1.0f, 0.0f, 0.0f);
-                            //Debug.Log("확인");
                         }
                     }
                 }
-                else if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("WS"), 0f), .2f, WhatStopMovement))
+                else if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("WS"), 0f), 0.25f, WhatStopMovement))
                 {
                     if (Mathf.Abs(Input.GetAxisRaw("WS")) == 1f)
                     {
