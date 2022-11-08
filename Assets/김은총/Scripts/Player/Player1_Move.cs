@@ -6,7 +6,8 @@ public class Player1_Move : MonoBehaviour
 {
     public float MoveSpeed = 5f;
     public Transform MovePoint;
-
+    public float Radius;
+    public bool Collision;
     public LayerMask WhatStopMovement;
 
     public bool canMove = true;
@@ -22,38 +23,33 @@ public class Player1_Move : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, MoveSpeed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, MovePoint.position) <= .05f)
+            if (Vector3.Distance(transform.position, MovePoint.position) <= 0.05f)
             {
-                if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("AD"), 0f, 0f), 0.25f, WhatStopMovement))
+                if (Mathf.Abs(Input.GetAxisRaw("AD")) == 1f)
                 {
-                    if (Mathf.Abs(Input.GetAxisRaw("AD")) == 1f)
+                    if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(Input.GetAxisRaw("AD"), 0f, 0f), Radius, WhatStopMovement))
                     {
-                        if (Input.GetKey(KeyCode.A)) 
-                        {
-                            MovePoint.position -= new Vector3(1.0f, 0.0f, 0.0f);
-                        }
-                        if (Input.GetKey(KeyCode.D)) 
-                        {
-                            MovePoint.position += new Vector3(1.0f, 0.0f, 0.0f);
-                        }
+                        MovePoint.position += new Vector3(Input.GetAxisRaw("AD"), 0.0f, 0.0f);
                     }
                 }
-                else if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("WS"), 0f), 0.25f, WhatStopMovement))
+                else if (Mathf.Abs(Input.GetAxisRaw("WS")) == 1f)
                 {
-                    if (Mathf.Abs(Input.GetAxisRaw("WS")) == 1f)
+                    if (!Physics2D.OverlapCircle(MovePoint.position + new Vector3(0f, Input.GetAxisRaw("WS"), 0f), Radius, WhatStopMovement)) 
                     {
-                        if (Input.GetKey(KeyCode.W))
-                        {
-                            MovePoint.position += new Vector3(0.0f, 1.0f, 0.0f);
-                        }
-                        if (Input.GetKey(KeyCode.S))
-                        {
-                            MovePoint.position -= new Vector3(0.0f, 1.0f, 0.0f);
-                        }
+                        MovePoint.position += new Vector3(0.0f, Input.GetAxisRaw("WS"), 0.0f);
                     }
                 }
             }
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player2"))
+        {
+            Debug.Log("Player2");
+            Collision = true;
+        }
     }
 }
+
