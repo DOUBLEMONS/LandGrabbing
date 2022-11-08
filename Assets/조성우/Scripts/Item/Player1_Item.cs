@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player1_Item : MonoBehaviour
 {
     [SerializeField] private GameObject yutPrefab;
+    [SerializeField] private GameObject jaegiPrefab;
 
     private Player1_Move player1Logic;
 
@@ -16,6 +17,7 @@ public class Player1_Item : MonoBehaviour
     void Update()
     {
         UseItemYut();
+        UseItemJaegi();
     }
 
     private void UseItemYut()
@@ -28,4 +30,13 @@ public class Player1_Item : MonoBehaviour
             Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -30)));
         }
     }
+
+    private void UseItemJaegi()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            GameObject jaegi = Instantiate(jaegiPrefab, transform.position, Quaternion.identity);
+            jaegi.GetComponent<Jaegi>().randomDir = new Vector2(Random.Range(-360, 360), Random.Range(-360, 360));
+        }
+    }    
 }

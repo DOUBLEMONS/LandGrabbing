@@ -18,7 +18,12 @@ public class Player2_Move : MonoBehaviour
 
     void Update()
     {
-        if(canMove)
+        Move();
+    }
+
+    private void Move()
+    {
+        if (canMove)
         {
             transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, MoveSpeed * Time.deltaTime);
 
@@ -28,11 +33,11 @@ public class Player2_Move : MonoBehaviour
                 {
                     if (Mathf.Abs(Input.GetAxisRaw("LeftRightArrow")) == 1f)
                     {
-                        if (Input.GetKey(KeyCode.LeftArrow)) 
+                        if (Input.GetKey(KeyCode.LeftArrow))
                         {
                             MovePoint.position -= new Vector3(1.0f, 0.0f, 0.0f);
                         }
-                        if (Input.GetKey(KeyCode.RightArrow)) 
+                        if (Input.GetKey(KeyCode.RightArrow))
                         {
                             MovePoint.position += new Vector3(1.0f, 0.0f, 0.0f);
                         }
@@ -54,5 +59,30 @@ public class Player2_Move : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void HitYut()
+    {
+        transform.position = new Vector2(7.5f, 0.5f);
+        MovePoint.position = new Vector2(7.5f, 0.5f);
+
+        canMove = false;
+
+        Invoke("WaitSec", 2f);
+    }
+
+    private void WaitSec()
+    {
+        canMove = true;
+    }
+
+    public void HitJaegi()
+    {
+        transform.position = new Vector2(7.5f, 0.5f);
+        MovePoint.position = new Vector2(7.5f, 0.5f);
+
+        canMove = false;
+
+        Invoke("WaitSec", 3f);
     }
 }
