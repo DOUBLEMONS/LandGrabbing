@@ -24,10 +24,10 @@ public class Player1_Item : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.J))
         {
-            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 9)));
-            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 30)));
-            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -9)));
-            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -30)));
+            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 9)));
+            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 30)));
+            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -9)));
+            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -30)));
         }
     }
 

@@ -15,7 +15,7 @@ public class Yut : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player2"))
         {
-            collision.gameObject.GetComponent<Player2_Move>().HitYut();
+            //collision.gameObject.GetComponent<Player2_Move>().HitYut();
             Destroy(gameObject);
         }
         if(collision.gameObject.CompareTag("Wall"))

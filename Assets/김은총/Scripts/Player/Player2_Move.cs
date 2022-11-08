@@ -53,13 +53,6 @@ public class Player2_Move : MonoBehaviour
         if(collision.CompareTag("Player1"))
         {
             Debug.Log("Player1");
-            MoveSpeed = 6.25f;
-            Invoke("Reset", 0.5f);
         }
-    }
-
-    private void Reset()
-    {
-        MoveSpeed = 10f;
     }
 }

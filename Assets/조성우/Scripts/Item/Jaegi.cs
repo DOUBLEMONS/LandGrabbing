@@ -49,7 +49,7 @@ public class Jaegi : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player2"))
         {
-            collision.gameObject.GetComponent<Player2_Move>().HitJaegi();
+            //collision.gameObject.GetComponent<Player2_Move>().HitJaegi();
             Destroy(gameObject);
         }
     }
