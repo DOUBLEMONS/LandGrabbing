@@ -19,7 +19,12 @@ public class Player2_Move : MonoBehaviour
 
     void Update()
     {
-        if(canMove)
+        Move();
+    }
+
+    private void Move()
+    {
+        if (canMove)
         {
             transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, MoveSpeed * Time.deltaTime);
 

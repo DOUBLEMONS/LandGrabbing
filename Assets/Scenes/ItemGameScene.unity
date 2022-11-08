@@ -8258,7 +8258,7 @@ GameObject:
   - component: {fileID: 616822145}
   m_Layer: 3
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10962,7 +10962,7 @@ GameObject:
   - component: {fileID: 817606496}
   m_Layer: 3
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13834,6 +13834,7 @@ GameObject:
   - component: {fileID: 1046014971}
   - component: {fileID: 1046014973}
   - component: {fileID: 1046014974}
+  - component: {fileID: 1046014972}
   m_Layer: 3
   m_Name: Player 1
   m_TagString: Player1
@@ -13869,6 +13870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
+  playerLotation: 0
   MovePoint: {fileID: 846200085}
   WhatStopMovement:
     serializedVersion: 2
@@ -13900,6 +13902,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1046014972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046014968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd881ad492ad29449e8854083020c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yutPrefab: {fileID: 2919011239012781529, guid: e736a4a319ba4674fb299585a3c00d1c, type: 3}
+  jaegiPrefab: {fileID: 328745398153036738, guid: 82d060492b6cf0d4e9670f7014386e27, type: 3}
 --- !u!212 &1046014973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16111,6 +16127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1228082079}
+  - component: {fileID: 1228082080}
   m_Layer: 0
   m_Name: ItemManager
   m_TagString: Untagged
@@ -16132,6 +16149,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228082080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228082078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e66cc25071f5d488d8e952c5d48cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1233829235
 GameObject:
   m_ObjectHideFlags: 0
@@ -17407,7 +17436,7 @@ GameObject:
   - component: {fileID: 1330410428}
   m_Layer: 3
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21939,7 +21968,7 @@ GameObject:
   - component: {fileID: 1708164047}
   m_Layer: 3
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
