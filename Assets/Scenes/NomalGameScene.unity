@@ -13871,6 +13871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 10
   MovePoint: {fileID: 846200085}
+  WhatStopMovement:
+    serializedVersion: 2
+    m_Bits: 8
   canMove: 1
 --- !u!61 &1046014971
 BoxCollider2D:
