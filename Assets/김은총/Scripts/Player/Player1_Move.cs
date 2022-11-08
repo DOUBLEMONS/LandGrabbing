@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player1_Move : MonoBehaviour
 {
     public float MoveSpeed = 5f;
-    public Transform MovePoint;
+    public float playerLotation;
 
+    public Transform MovePoint;
+    
     public LayerMask WhatStopMovement;
 
     public bool canMove = true;
@@ -31,10 +33,12 @@ public class Player1_Move : MonoBehaviour
                         if (Input.GetKey(KeyCode.A)) 
                         {
                             MovePoint.position -= new Vector3(1.0f, 0.0f, 0.0f);
+                            playerLotation = 90;
                         }
                         if (Input.GetKey(KeyCode.D)) 
                         {
                             MovePoint.position += new Vector3(1.0f, 0.0f, 0.0f);
+                            playerLotation = -90;
                         }
                     }
                 }
@@ -45,10 +49,12 @@ public class Player1_Move : MonoBehaviour
                         if (Input.GetKey(KeyCode.W))
                         {
                             MovePoint.position += new Vector3(0.0f, 1.0f, 0.0f);
+                            playerLotation = 0;
                         }
                         if (Input.GetKey(KeyCode.S))
                         {
                             MovePoint.position -= new Vector3(0.0f, 1.0f, 0.0f);
+                            playerLotation = 180;
                         }
                     }
                 }
