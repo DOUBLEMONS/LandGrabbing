@@ -16,20 +16,29 @@ public class Timer : MonoBehaviour
     void Start()
     {
         countdownText.text = setTime.ToString();
+        countdownText.enabled = false;
     }
 
     void Update()
     {
-        if(!timeStop)
+        if (!timeStop)
         {
             setTime -= Time.deltaTime;
-            if(setTime <= 0)
+
+            if (setTime < 3.5f)
             {
-                timeStop = true;
-                player1.canMove = false;
-                player2.canMove = false;
-                GameManager.Instance.LoadResult();
+                countdownText.enabled = true;
+                setTime += Time.deltaTime * 0.25f;
+
+                if (setTime <= 0)
+                {
+                    timeStop = true;
+                    player1.canMove = false;
+                    player2.canMove = false;
+                    GameManager.Instance.LoadResult();
+                }
             }
+
             countdownText.text = Mathf.Round(setTime).ToString();
         }
     }
