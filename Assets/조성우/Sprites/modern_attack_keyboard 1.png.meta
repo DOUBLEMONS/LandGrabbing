@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: e580e9a54b6e2b141afbba31144548ed
+guid: cdaacf098352d6c488cde35e91a30a56
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3933150243152950456
+    second: modern_attack_keyboard 1_0
+  - first:
+      213: -6402807810181149330
+    second: modern_attack_keyboard 1_1
+  - first:
+      213: -8146710800928323187
+    second: modern_attack_keyboard 1_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -41,12 +50,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +99,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: modern_attack_keyboard 1_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 360
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b47f53be4b559630800000000000000
+      internalID: 3933150243152950456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: modern_attack_keyboard 1_1
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 360
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d4e0d5838a427a0800000000000000
+      internalID: -6402807810181149330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: modern_attack_keyboard 1_2
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1
+        width: 360
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8944de80b111fe80800000000000000
+      internalID: -8146710800928323187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

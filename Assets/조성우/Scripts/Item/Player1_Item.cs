@@ -6,37 +6,89 @@ public class Player1_Item : MonoBehaviour
 {
     [SerializeField] private GameObject yutPrefab;
     [SerializeField] private GameObject jaegiPrefab;
+    [SerializeField] private GameObject topPrefab;
 
-    private Player1_Move player1Logic;
+    public Transform MovePoint;
 
-    private void Awake()
-    {
-        player1Logic = GetComponent<Player1_Move>();
-    }
+    private float playerLotation = 0;
 
     void Update()
     {
+        CheckPlayerLotation();
         UseItemYut();
         UseItemJaegi();
+        UseItemTop();
+    }
+
+    private void CheckPlayerLotation()
+    {
+        if (Mathf.Abs(Input.GetAxisRaw("AD")) == 1f)
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                playerLotation = 90;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                playerLotation = -90;
+            }
+        }
+        else if (Mathf.Abs(Input.GetAxisRaw("WS")) == 1f)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                playerLotation = 0;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                playerLotation = 180;
+            }
+        }
     }
 
     private void UseItemYut()
     {
-        if(Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && ItemManager.Instance.folkItemImage[0].activeSelf)
         {
-            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 9)));
-            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + 30)));
-            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -9)));
-            //Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, player1Logic.playerLotation + -30)));
+            ItemManager.Instance.folkItemImage[0].SetActive(false);
+            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + 9)));
+            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + 30)));
+            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + -9)));
+            Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + -30)));
         }
     }
 
     private void UseItemJaegi()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && ItemManager.Instance.folkItemImage[1].activeSelf)
         {
+            ItemManager.Instance.folkItemImage[1].SetActive(false);
             GameObject jaegi = Instantiate(jaegiPrefab, transform.position, Quaternion.identity);
             jaegi.GetComponent<Jaegi>().randomDir = new Vector2(Random.Range(-360, 360), Random.Range(-360, 360));
         }
-    }    
+    }
+
+    private void UseItemTop()
+    {
+        if (Input.GetKeyDown(KeyCode.L) && ItemManager.Instance.folkItemImage[2].activeSelf)
+        {
+            ItemManager.Instance.folkItemImage[2].SetActive(false);
+            Instantiate(topPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    public void HitCar()
+    {
+        transform.position = new Vector2(-8.5f, 0.5f);
+        MovePoint.position = new Vector2(-8.5f, 0.5f);
+
+        transform.GetComponent<Player1_Move>().canMove = false;
+
+        Invoke("WaitSec", 2f);
+    }
+
+    private void WaitSec()
+    {
+        transform.GetComponent<Player1_Move>().canMove = true;
+    }
 }

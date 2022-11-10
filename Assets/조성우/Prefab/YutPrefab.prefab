@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2919011239012781508}
   - component: {fileID: 2919011239012781531}
   - component: {fileID: 2919011239012781530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: YutPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b0babb411a1c8478b3e6f555302a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
