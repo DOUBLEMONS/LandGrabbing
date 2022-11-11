@@ -51,7 +51,8 @@ public class UIManager : MonoBehaviour
 
     public void BgmMuteON()
     {
-        if(bgmBnt.image.sprite == bgmOnSprite)
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
+        if (bgmBnt.image.sprite == bgmOnSprite)
         {
             bgmBnt.image.sprite = bgmMuteSprite;
             bgmVolume = bgmSlider.value;
@@ -66,6 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void SfxMuteON()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         if (sfxBnt.image.sprite == sfxOnSprite)
         {
             sfxBnt.image.sprite = sfxMuteSprite;
@@ -81,36 +83,43 @@ public class UIManager : MonoBehaviour
 
     public void LoadTitleScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         SceneManager.LoadScene("TitleScene");
     }
 
     public void LoadNomalGameScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         SceneManager.LoadScene("NomalGameScene");
     }
 
     public void LoadItemGameScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         SceneManager.LoadScene("ItemGameScene");
     }
 
     public void LoadNomalExplanationScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         SceneManager.LoadScene("NomalExplanationScene");
     }
 
     public void LoadItemExplanationScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         SceneManager.LoadScene("ItemExplanationScene");
     }
 
     public void GameExit()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         Application.Quit();
     }
 
     public void OpenSettingImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         settingImage = true;
         if (makerImage)
         {
@@ -125,6 +134,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenGameChoiceImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         gameChoiceImage = true;
         if (makerImage)
         {
@@ -139,18 +149,21 @@ public class UIManager : MonoBehaviour
 
     public void CloseSettingImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         settingImage = false;
         settingRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
     }
 
     public void CloseGameChoiceImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         gameChoiceImage = false;
         gameChoiceRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
     }
 
     public void OpenMakerImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         makerImage = true;
         if (settingImage)
         {
@@ -165,6 +178,7 @@ public class UIManager : MonoBehaviour
 
     public void CloseMakerImage()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         makerImage = false;
         makerRT.DOAnchorPosY(-1200, 1).SetEase(Ease.OutQuint);
     }

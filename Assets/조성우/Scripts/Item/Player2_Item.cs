@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player2_Item : MonoBehaviour
 {
     [SerializeField] private GameObject carPrefab;
+    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private GameObject robotPrefab;
 
     public Transform MovePoint;
 
@@ -14,6 +16,8 @@ public class Player2_Item : MonoBehaviour
     {
         CheckPlayerLotation();
         UesItemCar();
+        UesItemBall();
+        UesItemRobot();
     }
 
     private void CheckPlayerLotation()
@@ -56,6 +60,27 @@ public class Player2_Item : MonoBehaviour
                 Instantiate(carPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation)));
             }
             ItemManager.Instance.modernItemImage[0].SetActive(false);
+        }
+    }
+
+    private void UesItemBall()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha2) && ItemManager.Instance.modernItemImage[1].activeSelf)
+        {
+            ItemManager.Instance.modernItemImage[1].SetActive(false);
+            SoundManager.Instance.PlaySFXSound("UesItem");
+            GameObject ball = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            ball.GetComponent<Ball>().randomDir = new Vector2(Random.Range(-360, 360), Random.Range(-360, 360));
+        }
+    }
+
+    private void UesItemRobot()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha3) && ItemManager.Instance.modernItemImage[2].activeSelf)
+        {
+            ItemManager.Instance.modernItemImage[2].SetActive(false);
+            SoundManager.Instance.PlaySFXSound("UesItem");
+            Instantiate(robotPrefab, transform.position, Quaternion.identity);
         }
     }
 

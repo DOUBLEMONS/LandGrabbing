@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(settingMenuOpened)
+            if (settingMenuOpened)
             {
                 settingMenuOpened = false;
                 pauseMenuObj.SetActive(true);
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         pauseMenuObj.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -105,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenSettingMenu()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         settingMenuOpened = true;
         pauseMenuObj.SetActive(false);
         settingMenuObj.SetActive(true);
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void CloseSettingMenu()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         settingMenuOpened = false;
         pauseMenuObj.SetActive(true);
         settingMenuObj.SetActive(false);
@@ -119,6 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void BgmMuteON()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         if (bgmBnt.image.sprite == bgmOnSprite)
         {
             bgmBnt.image.sprite = bgmMuteSprite;
@@ -134,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void SfxMuteON()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         if (sfxBnt.image.sprite == sfxOnSprite)
         {
             sfxBnt.image.sprite = sfxMuteSprite;
@@ -170,7 +175,8 @@ public class GameManager : MonoBehaviour
     
     public void LoadNomalRestart()
     {
-        if(Time.timeScale == 0)
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
+        if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
         }
@@ -179,6 +185,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadItemRestart()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
@@ -188,6 +195,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadTitleScene()
     {
+        SoundManager.Instance.PlaySFXSound("ButtonPush");
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;

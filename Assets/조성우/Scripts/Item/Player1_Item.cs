@@ -90,6 +90,22 @@ public class Player1_Item : MonoBehaviour
         Invoke("WaitSec", 2f);
     }
 
+    public void HitBall()
+    {
+        transform.position = new Vector2(-8.5f, 0.5f);
+        MovePoint.position = new Vector2(-8.5f, 0.5f);
+
+        transform.GetComponent<Player1_Move>().canMove = false;
+
+        Invoke("WaitSec", 2f);
+    }
+
+    public void ReturnPos()
+    {
+        transform.position = new Vector2(-8.5f, 0.5f);
+        MovePoint.position = new Vector2(-8.5f, 0.5f);
+    }
+
     private void WaitSec()
     {
         transform.GetComponent<Player1_Move>().canMove = true;

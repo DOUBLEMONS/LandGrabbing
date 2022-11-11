@@ -50,7 +50,7 @@ public class ItemManager : MonoBehaviour
 
     public void MakeItemBox()
     {
-        Invoke("makeitembox", 4);
+        Invoke("makeitembox", 6);
     }
 
     private void makeitembox()
