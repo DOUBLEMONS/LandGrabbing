@@ -67,6 +67,8 @@ public class Block_ChangeSprite : MonoBehaviour
     {
         Modernity.value += 0.0065f;
 
+        SoundManager.Instance.PlaySFXSound("GroundEat");
+
         GameManager.Instance.modernityScore++;
 
         ModernityValue();
@@ -84,6 +86,8 @@ public class Block_ChangeSprite : MonoBehaviour
     void FolkloreUp()
     {
         Folklore.value += 0.0065f;
+
+        SoundManager.Instance.PlaySFXSound("GroundEat");
 
         GameManager.Instance.folkloreScore++;
 

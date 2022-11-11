@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
-    [SerializeField] public GameObject[] folkItemImage;
-    [SerializeField] public GameObject[] modernItemImage;
+    [SerializeField] private int maxItemBox;
+
+    [SerializeField] private GameObject itemBox;
+
+    public GameObject[] folkItemImage;
+    public GameObject[] modernItemImage;
 
     private static ItemManager _instance;
 
@@ -35,6 +39,25 @@ public class ItemManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        for(int i = 0; i < maxItemBox; i++)
+        {
+            GameObject itembox = Instantiate(itemBox);
+
+            itemBox.transform.position = new Vector2(Random.Range(-8.3f, 7.35f), Random.Range(-3.25f, 4.3f));
+        }
+    }
+
+    public void MakeItemBox()
+    {
+        Invoke("makeitembox", 4);
+    }
+
+    private void makeitembox()
+    {
+        GameObject itembox = Instantiate(itemBox);
+
+        itemBox.transform.position = new Vector2(Random.Range(-8.3f, 7.35f), Random.Range(-3.25f, 4.3f));
     }
 
     public void GetFolkItem()

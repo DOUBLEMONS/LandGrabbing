@@ -46,7 +46,8 @@ public class Player2_Item : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.Instance.modernItemImage[0].activeSelf)
         {
-            if(playerLotation == 180)
+            SoundManager.Instance.PlaySFXSound("UesItem");
+            if (playerLotation == 180)
             {
                 Instantiate(carPrefab, transform.position, Quaternion.Euler(new Vector3(0, playerLotation, 0)));
             }

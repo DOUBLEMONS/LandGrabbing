@@ -79,6 +79,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void LoadTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
     public void LoadNomalGameScene()
     {
         SceneManager.LoadScene("NomalGameScene");

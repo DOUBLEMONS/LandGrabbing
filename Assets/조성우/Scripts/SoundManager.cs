@@ -95,8 +95,18 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.volume = volume;
     }
 
+    public float GetBgmVolume()
+    {
+        return bgmPlayer.volume;
+    }
+
     public void SetSfxVolume(float volume)
     {
         sfxPlayer.volume = volume;
+    }
+
+    public float GetSfxVolume()
+    {
+        return sfxPlayer.volume;
     }
 }

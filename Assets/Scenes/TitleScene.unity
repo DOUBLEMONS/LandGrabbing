@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116248713}
   - component: {fileID: 116248714}
+  - component: {fileID: 116248715}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -212,19 +213,20 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1653511742}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SetBgmVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &116248715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116248712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6caaa368ff50041b8585abc35a9c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 116248714}
 --- !u!1 &148298533
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +663,7 @@ MonoBehaviour:
   bgmOnSprite: {fileID: 2382542705151310463, guid: c79469fd17b03ec41b25f1ea23bd97c6, type: 3}
   bgmMuteSprite: {fileID: -3728481864374881403, guid: baf4968a5a357074db821a85d591ec1d, type: 3}
   sfxOnSprite: {fileID: 8023777996216889834, guid: 86a8e05ea9888db48af0157045797bf4, type: 3}
-  sfxMuteSprite: {fileID: 1161608823702266113, guid: f9c6b31bc84b8f04b8fbbee6cfef9222, type: 3}
+  sfxMuteSprite: {fileID: 6033623572040932455, guid: 3ab4ae58cd3ea3f4596e1ae655fef2d2, type: 3}
 --- !u!4 &256374008
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,6 +1644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967604289}
   - component: {fileID: 967604290}
+  - component: {fileID: 967604291}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1722,6 +1725,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &967604291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967604288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a741ff5ba178b07418c6b6c0fdee90f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 967604290}
 --- !u!1 &979645190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,7 +2956,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainSceneBgmAudioClip: {fileID: 8300000, guid: 4562b3f991b927b4fa27fc8015e16aba, type: 3}
   gameSceneBgmAudioClip: {fileID: 8300000, guid: e40859563550b3443be265f505232529, type: 3}
-  sfxAudioClips: []
+  sfxAudioClips:
+  - {fileID: 8300000, guid: 5d0f9d48b0ae0cd448e8bd869a37c6bd, type: 3}
+  - {fileID: 8300000, guid: f5f90054f74cec446afdefd6d6b015c7, type: 3}
+  - {fileID: 8300000, guid: 28b7543cd7bd42143831b57b3fae850c, type: 3}
+  - {fileID: 8300000, guid: 37a2530f6806ddd488d53353a703924a, type: 3}
 --- !u!4 &1653511743
 Transform:
   m_ObjectHideFlags: 0

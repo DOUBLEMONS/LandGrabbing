@@ -51,6 +51,7 @@ public class Player1_Item : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J) && ItemManager.Instance.folkItemImage[0].activeSelf)
         {
             ItemManager.Instance.folkItemImage[0].SetActive(false);
+            SoundManager.Instance.PlaySFXSound("UesItem");
             Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + 9)));
             Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + 30)));
             Instantiate(yutPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, playerLotation + -9)));
@@ -63,6 +64,7 @@ public class Player1_Item : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K) && ItemManager.Instance.folkItemImage[1].activeSelf)
         {
             ItemManager.Instance.folkItemImage[1].SetActive(false);
+            SoundManager.Instance.PlaySFXSound("UesItem");
             GameObject jaegi = Instantiate(jaegiPrefab, transform.position, Quaternion.identity);
             jaegi.GetComponent<Jaegi>().randomDir = new Vector2(Random.Range(-360, 360), Random.Range(-360, 360));
         }
@@ -73,6 +75,7 @@ public class Player1_Item : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && ItemManager.Instance.folkItemImage[2].activeSelf)
         {
             ItemManager.Instance.folkItemImage[2].SetActive(false);
+            SoundManager.Instance.PlaySFXSound("UesItem");
             Instantiate(topPrefab, transform.position, Quaternion.identity);
         }
     }
