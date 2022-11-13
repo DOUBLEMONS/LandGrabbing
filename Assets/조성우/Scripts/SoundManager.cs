@@ -52,6 +52,8 @@ public class SoundManager : MonoBehaviour
         {
             audioClipsDic.Add(audioclip.name, audioclip);
         }
+
+        Screen.SetResolution(1920, 1080, true);
     }
 
     // 효과 사운드 재생 : 이름을 필수 매개변수, 볼륨을 선택적 매개변수로 지정
