@@ -48,7 +48,7 @@ public class Player2_Item : MonoBehaviour
 
     private void UesItemCar()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.Instance.modernItemImage[0].activeSelf)
+        if(Input.GetKeyDown(KeyCode.Keypad1) && ItemManager.Instance.modernItemImage[0].activeSelf)
         {
             SoundManager.Instance.PlaySFXSound("UesItem");
             if (playerLotation == 180)
@@ -65,7 +65,7 @@ public class Player2_Item : MonoBehaviour
 
     private void UesItemBall()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha2) && ItemManager.Instance.modernItemImage[1].activeSelf)
+        if(Input.GetKeyDown(KeyCode.Keypad2) && ItemManager.Instance.modernItemImage[1].activeSelf)
         {
             ItemManager.Instance.modernItemImage[1].SetActive(false);
             SoundManager.Instance.PlaySFXSound("UesItem");
@@ -76,7 +76,7 @@ public class Player2_Item : MonoBehaviour
 
     private void UesItemRobot()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha3) && ItemManager.Instance.modernItemImage[2].activeSelf)
+        if(Input.GetKeyDown(KeyCode.Keypad3) && ItemManager.Instance.modernItemImage[2].activeSelf)
         {
             ItemManager.Instance.modernItemImage[2].SetActive(false);
             SoundManager.Instance.PlaySFXSound("UesItem");

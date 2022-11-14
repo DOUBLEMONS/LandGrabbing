@@ -8,16 +8,16 @@ public class LuckyBox : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player1") && ItemManager.Instance.CheckUesingFolkItem())
         {
-            SoundManager.Instance.PlaySFXSound("ItemEat");
             ItemManager.Instance.GetFolkItem();
+            SoundManager.Instance.PlaySFXSound("ItemEat");
             ItemManager.Instance.MakeItemBox();
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Player2") && ItemManager.Instance.CheckUesingModernItem())
         {
-            SoundManager.Instance.PlaySFXSound("ItemEat");
             ItemManager.Instance.GetModernItem();
             ItemManager.Instance.MakeItemBox();
+            SoundManager.Instance.PlaySFXSound("ItemEat");
             Destroy(gameObject);
         }
     }
